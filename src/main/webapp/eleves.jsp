@@ -11,6 +11,7 @@
 <html>
 <head>
     <title>Parcourseum</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
   <h1>Liste des élèves</h1>
