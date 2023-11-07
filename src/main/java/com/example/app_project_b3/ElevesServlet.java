@@ -12,6 +12,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet(name = "elevesServlet", value = "/eleves-servlet")
 public class ElevesServlet extends HttpServlet {
@@ -24,9 +26,13 @@ public class ElevesServlet extends HttpServlet {
             PreparedStatement ps = co.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
             out.println("<html><body><h1>Liste des élèves</h1><ul>");
+            List<Eleve> eleves = new ArrayList<>();
             while(rs.next()) {
+                int id = rs.getInt("eleve_id");
                 String firstName = rs.getString("eleve_first_name");
                 String lastName = rs.getString("eleve_last_name");
+                Eleve eleve = new Eleve(id, firstName, lastName);
+                eleves.add(eleve);
                 out.println("<li>" + firstName + " " + lastName + "</li>");
             }
             out.println("</ul></html></body>");

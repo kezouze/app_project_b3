@@ -5,7 +5,7 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
-<h1><%= "Mon super site" %>
+<h1><%= "Bulletins scolaires" %>
 </h1>
 <br/>
 <a href="profs-servlet">Liste des professeurs</a>
