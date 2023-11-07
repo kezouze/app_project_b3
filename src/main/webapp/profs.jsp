@@ -19,13 +19,16 @@
         List<Prof> profs = (List<Prof>) request.getAttribute("profs");
         for (Prof prof : profs ) {
     %>
-        <li><%= prof.getLastName() + " "+ prof.getFirstName() %></li>
+        <li><%= prof.getLastName() + " "+ prof.getFirstName() %>
+            <a href="delete-servlet?id=<%=prof.getId()%>&table=profs">🗑️</a>
+        </li>
     <%
         }
     %>
 </ul>
 <h2>Ajouter un prof</h2>
 <form method="post" action="insert-prof-servlet">
+    <input type="hidden" name="table" value="profs">
     <input required type="text" placeholder="Nom" name="last_name">
     <input required type="text" placeholder="Prénom" name="first_name">
     <input type="submit" value="Valider">

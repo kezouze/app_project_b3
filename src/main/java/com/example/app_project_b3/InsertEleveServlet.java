@@ -10,7 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-@WebServlet(name = "insertEleveQervlet", value="/insert-eleve-servlet")
+@WebServlet(name = "insertEleveServlet", value="/insert-eleve-servlet")
 public class InsertEleveServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String lastName = request.getParameter("last_name").trim();

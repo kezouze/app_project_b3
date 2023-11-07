@@ -19,13 +19,16 @@
       List<Eleve> eleves = (List<Eleve>) request.getAttribute("eleves");
       for (Eleve eleve : eleves ) {
   %>
-      <li><%= eleve.getLastName() + " " + eleve.getFirstName() %></li>
+      <li><%= eleve.getLastName() + " " + eleve.getFirstName() %>
+          <a href="delete-servlet?id=<%=eleve.getId()%>&table=eleves">🗑️</a>
+      </li>
   <%
     }
   %>
 </ul>
   <h2>Ajouter un élève</h2>
   <form method="post" action="insert-eleve-servlet">
+      <input type="hidden" name="table" value="eleves">
       <input required type="text" placeholder="Nom" name="last_name">
       <input required type="text" placeholder="Prénom" name="first_name">
       <input type="submit" value="Valider">
