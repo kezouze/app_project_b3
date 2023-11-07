@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Parcourseum</title>
 </head>
 <body>
-<h1><%= "Bulletins scolaires" %>
+<h1><%= "Bienvenue à la devSchool" %>
 </h1>
 <br/>
 <a href="profs-servlet">Liste des professeurs</a>
