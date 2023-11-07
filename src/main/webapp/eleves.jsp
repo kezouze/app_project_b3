@@ -26,9 +26,10 @@
 </ul>
   <h2>Ajouter un élève</h2>
   <form method="post" action="insert-eleve-servlet">
-      <input type="text" placeholder="Nom" name="last_name">
-      <input type="text" placeholder="Prénom" name="first_name">
+      <input required type="text" placeholder="Nom" name="last_name">
+      <input required type="text" placeholder="Prénom" name="first_name">
       <input type="submit" value="Valider">
   </form>
+  <a href="index.jsp">Retour</a>
 </body>
 </html>
