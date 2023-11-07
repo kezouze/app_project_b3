@@ -6,7 +6,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*; // Il est préférable d'importer les classes individuellement
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import java.sql.*;
 import java.util.ArrayList;

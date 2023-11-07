@@ -24,5 +24,11 @@
         }
     %>
 </ul>
+<h2>Ajouter un prof</h2>
+<form method="post" action="insert-prof-servlet">
+    <input type="text" placeholder="Nom" name="last_name">
+    <input type="text" placeholder="Prénom" name="first_name">
+    <input type="submit" value="Valider">
+</form>
 </body>
 </html>

@@ -3,8 +3,8 @@ package com.example.app_project_b3;
 public class Eleve {
 
     private final int id;
-    private final String firstName;
-    private final String lastName;
+    private String firstName;
+    private String lastName;
 
     public Eleve(int id, String firstName, String lastName) {
         this.id = id;
