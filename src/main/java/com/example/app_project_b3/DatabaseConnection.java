@@ -10,14 +10,9 @@ public class DatabaseConnection {
         String url = "jdbc:mysql://localhost/app_project_b3";
         String utilisateur = "root";
         String mdp = "root";
-
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(url, utilisateur, mdp);
-
-            if(connection != null) {
-                System.out.println("Connexion à la base de données réussie !");
-            }
         } catch (ClassNotFoundException | SQLException e ) {
             e.printStackTrace();
         }
