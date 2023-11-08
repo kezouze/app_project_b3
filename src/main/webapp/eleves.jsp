@@ -28,7 +28,7 @@
   %>
 </ul>
   <h2>Ajouter un élève</h2>
-  <form method="post" action="insert-eleve-servlet">
+  <form method="post" action="insert-servlet">
       <input type="hidden" name="table" value="eleves">
       <input required type="text" placeholder="Nom" name="last_name">
       <input required type="text" placeholder="Prénom" name="first_name">

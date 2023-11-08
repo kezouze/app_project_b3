@@ -28,7 +28,7 @@
     %>
 </ul>
 <h2>Ajouter un prof</h2>
-<form method="post" action="insert-prof-servlet">
+<form method="post" action="insert-servlet">
     <input type="hidden" name="table" value="profs">
     <input required type="text" placeholder="Nom" name="last_name">
     <input required type="text" placeholder="Prénom" name="first_name">
