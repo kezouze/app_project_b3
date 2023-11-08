@@ -13,12 +13,13 @@ import java.sql.SQLException;
 @WebServlet(name="deleteServlet", value="/delete-servlet")
 public class DeleteServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
         String table = request.getParameter("table");
+        String column = table.substring(0, table.length() -1);
         int id = Integer.parseInt(request.getParameter("id"));
 
         if(id > 0) { // Ajouter condition si existant en BDD
-
-            String query = "DELETE from " + table + " WHERE " + table.substring(0, table.length() -1) + "_id = ?";
+            String query = "DELETE from " + table + " WHERE " + column + "_id = ?";
             try {
                 Connection co = DatabaseConnection.myConnection();
                 try (PreparedStatement ps = co.prepareStatement(query)) {
