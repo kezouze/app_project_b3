@@ -20,7 +20,7 @@
       List<Eleve> eleves = (List<Eleve>) request.getAttribute("eleves");
       for (Eleve eleve : eleves ) {
   %>
-      <li>
+      <li class="eleves-list">
           <span><%= eleve.getLastName() + " " + eleve.getFirstName() %></></span>
           <span>
               <a title="Modifier" href="modify-servlet?id=<%=eleve.getId()%>&table=eleves&last_name=<%=eleve.getLastName()%>&first_name=<%=eleve.getFirstName()%>">🖋️</a>

@@ -6,8 +6,8 @@ body {
     color : #4d4dad;
 }
 
-li {
-    width: 200px;
+.profs-list, .eleves-list {
+    width: 220px;
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -12,5 +12,7 @@
 <a href="profs-servlet">Liste des professeurs</a>
 <br/>
 <a href="eleves-servlet">Liste des élèves</a>
+<br/>
+<a href="cours-servlet">Liste des cours</a>
 </body>
 </html>
