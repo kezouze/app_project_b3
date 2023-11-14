@@ -21,7 +21,8 @@
         for (Prof prof : profs ) {
     %>
         <li><%= prof.getLastName() + " "+ prof.getFirstName() %>
-            <a href="delete-servlet?id=<%=prof.getId()%>&table=profs">🗑️</a>
+            <a title="Modifier" href="modify-servlet?id=<%=prof.getId()%>&table=profs&last_name=<%=prof.getLastName()%>&first_name=<%=prof.getFirstName()%>">🖋️</a>
+            <a title="Supprimer" href="delete-servlet?id=<%=prof.getId()%>&table=profs">🗑️</a>
         </li>
     <%
         }
