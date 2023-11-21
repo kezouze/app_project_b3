@@ -7,9 +7,10 @@
 </head>
 <body>
     <div class="content">
-        <h1>Bienvenue à la <span class="devSchool-text">devSchool</span></h1>
+        <!-- pour récupérer resultcount <p><%=request.getAttribute("resultCount")%></p> -->
+        <h1 class="devSchool-text">devSchool</h1>
         <button class="con-btn" onclick="showHiddenForm()">Connexion</button>
-        <form action="" method="post" id="hiddenConForm" style="display: none">
+        <form action="connection-servlet" method="post" id="hiddenConForm" style="display: none">
             <input placeholder="Identifiant" type="text" name="username">
             <input placeholder="Mot de passe" type="password" name="password">
             <input type="submit">
@@ -28,7 +29,7 @@
     </div>
 </body>
 <script>
-    var hiddenForm = document.getElementById("hiddenConForm")
+    let hiddenForm = document.getElementById("hiddenConForm")
     function showHiddenForm(){
         hiddenForm.style.display = "flex"
     }

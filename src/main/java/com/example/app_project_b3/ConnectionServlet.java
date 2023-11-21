@@ -37,5 +37,14 @@ public class ConnectionServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         int resultCount = getCount(username, password);
+        /*
+        Pour envoyer resultcount vers la page index.jsp
+        request.setAttribute("resultCount", resultCount);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
+        */
+        if(resultCount == 1) {
+            response.sendRedirect("connection-servlet");
+            // et là on initialise le JWT
+        }
     }
 }
