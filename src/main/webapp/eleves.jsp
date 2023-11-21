@@ -14,6 +14,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
+<div class="content">
+
   <h1>Liste des élèves</h1>
 <ul>
   <%
@@ -39,5 +41,6 @@
       <input type="submit" value="Valider">
   </form>
   <a href="index.jsp">Retour</a>
+</div>
 </body>
 </html>

@@ -14,6 +14,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
+<div class="content">
+
     <h1>Liste des cours</h1>
     <ul>
         <%
@@ -28,5 +30,6 @@
         %>
     </ul>
     <a href="index.jsp">Retour</a>
+</div>
 </body>
 </html>
