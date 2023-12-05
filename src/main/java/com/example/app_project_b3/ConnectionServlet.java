@@ -37,8 +37,8 @@ public class ConnectionServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         int resultCount = getCount(username, password);
+        // Pour envoyer resultcount vers la page index.jsp :
         /*
-        Pour envoyer resultcount vers la page index.jsp
         request.setAttribute("resultCount", resultCount);
         request.getRequestDispatcher("index.jsp").forward(request, response);
         */
