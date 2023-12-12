@@ -15,6 +15,9 @@
             <input placeholder="Mot de passe" type="password" name="password">
             <input type="submit">
         </form>
+        <% if (request.getAttribute("login-error") != null ){ %>
+        <p class="login-error">Identifiants incorrects</p>
+        <% }%>
         <ul>
             <li>
                 <a href="profs-servlet">Liste des professeurs</a>

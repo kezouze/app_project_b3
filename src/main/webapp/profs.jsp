@@ -15,8 +15,10 @@
 </head>
 <body>
 <div class="content">
-
-<h1>Liste des professeurs</h1>
+    <% if (request.getAttribute("username") != null ){ %>
+    <h1>Bienvenue <span class="username"><%=request.getAttribute("username")%></span></h1>
+    <% }%>
+<h2>Liste des professeurs</h2>
 <ul>
     <%
         List<Prof> profs = (List<Prof>) request.getAttribute("profs");

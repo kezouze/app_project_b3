@@ -13,7 +13,7 @@ import java.util.List;
 
 @WebServlet(name = "profsServlet", value = "/profs-servlet")
 public class ProfsServlet extends HttpServlet {
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Connection co = DatabaseConnection.myConnection();
         String query = "SELECT * from profs ORDER BY prof_last_name";
         try {
