@@ -47,11 +47,12 @@ public class ConnectionServlet extends HttpServlet {
         request.getRequestDispatcher("index.jsp").forward(request, response);
         */
         if(resultCount == 1) {
-            // On créer la session
+            // On créer la session et on enregistre l'utilisateur
             HttpSession session = request.getSession();
+            session.setAttribute("username", username);
 
             // On créer le token et on le met dans la session
-            String token = JWTManager.generateToken(username, "admin", 360000);
+            String token = JWTManager.generateToken(username, "admin", 300000);
             session.setAttribute("token", token);
 
             // On vérifie la validité et on le met dans la session
@@ -59,8 +60,7 @@ public class ConnectionServlet extends HttpServlet {
             session.setAttribute("valide", isTokenValid);
 
             // On créer un attribut message et on redirige vers la bonne page
-            request.setAttribute("username", username);
-            request.getRequestDispatcher("logged.jsp").forward(request, response);
+            response.sendRedirect("logged.jsp");
         } else {
             request.setAttribute("login-error", "");
             request.getRequestDispatcher("index.jsp").forward(request, response);

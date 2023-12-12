@@ -14,8 +14,8 @@
 <body>
 <div class="content">
     <h1>Bienvenue
-        <% if (request.getAttribute("username") != null) { %>
-        <span class="username"><%=request.getAttribute("username")%></span>
+        <% if (session.getAttribute("username") != null) { %>
+        <span class="username"><%=session.getAttribute("username")%></span>
         <% }%>
     </h1>
     <ul>
@@ -27,6 +27,9 @@
         </li>
         <li>
             <a href="cours-servlet">Liste des cours</a>
+        </li>
+        <li>
+            <a style="color:red;" href="deco-servlet">Déconnexion</a>
         </li>
     </ul>
 </div>
