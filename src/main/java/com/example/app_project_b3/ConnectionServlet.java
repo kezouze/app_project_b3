@@ -60,7 +60,7 @@ public class ConnectionServlet extends HttpServlet {
 
             // On créer un attribut message et on redirige vers la bonne page
             request.setAttribute("username", username);
-            request.getRequestDispatcher("/profs-servlet").forward(request, response);
+            request.getRequestDispatcher("logged.jsp").forward(request, response);
         } else {
             request.setAttribute("login-error", "");
             request.getRequestDispatcher("index.jsp").forward(request, response);

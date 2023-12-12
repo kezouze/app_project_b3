@@ -29,7 +29,7 @@
             }
         %>
     </ul>
-    <a href="index.jsp">Retour</a>
+    <a href="logged.jsp">Retour</a>
 </div>
 </body>
 </html>
