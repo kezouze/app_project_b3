@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Parcourseum</title>
+    <title>devSchool</title>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>

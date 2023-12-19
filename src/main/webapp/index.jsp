@@ -2,8 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Parcourseum</title>
+    <title>devSchool</title>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="icon" href="assets/img/logo.png">
 </head>
 <body>
 <div class="content">

@@ -57,7 +57,7 @@ public class ConnectionServlet extends HttpServlet {
 
             // On vérifie la validité et on le met dans la session
             boolean isTokenValid = JWTManager.verifyToken(token, username, "admin");
-            session.setAttribute("valide", isTokenValid);
+            session.setAttribute("valid", isTokenValid);
 
             // On redirige vers la bonne page
             response.sendRedirect("logged.jsp");

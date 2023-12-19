@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Logged</title>
+    <title>devSchool</title>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
@@ -16,7 +16,10 @@
     <h1>Bienvenue
         <% if (session.getAttribute("username") != null) { %>
         <span class="username"><%=session.getAttribute("username")%></span>
-        <% }%>
+        <% } else {
+            response.sendRedirect("index.jsp");
+        }
+        %>
     </h1>
     <ul>
         <li>
