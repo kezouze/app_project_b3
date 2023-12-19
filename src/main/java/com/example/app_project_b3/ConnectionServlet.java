@@ -59,7 +59,7 @@ public class ConnectionServlet extends HttpServlet {
             boolean isTokenValid = JWTManager.verifyToken(token, username, "admin");
             session.setAttribute("valide", isTokenValid);
 
-            // On créer un attribut message et on redirige vers la bonne page
+            // On redirige vers la bonne page
             response.sendRedirect("logged.jsp");
         } else {
             request.setAttribute("login-error", "");
