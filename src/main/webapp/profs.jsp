@@ -40,7 +40,7 @@
         <input required type="text" placeholder="Prénom" name="first_name">
         <input type="submit" value="Valider">
     </form>
-    <a href="logged.jsp">Retour</a>
+    <a href="logged-professeur.jsp">Retour</a>
 </div>
 </body>
 </html>

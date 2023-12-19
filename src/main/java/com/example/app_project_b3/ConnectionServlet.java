@@ -14,42 +14,62 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.Instant;
+import java.util.Objects;
 
-@WebServlet(name="connectionServlet", value="/connection-servlet")
+@WebServlet(name = "connectionServlet", value = "/connection-servlet")
 public class ConnectionServlet extends HttpServlet {
 
-    public int getCount(String username, String password ) {
+    public int getCount(String username, String password) {
         int count = 0;
-        if(!username.isEmpty() && !password.isEmpty()) {
+        if (!username.isEmpty() && !password.isEmpty()) {
             Connection co = DatabaseConnection.myConnection();
-            String query = "SELECT COUNT(*) FROM profs WHERE admin_username = ? AND admin_password = ?";
+            String query = "SELECT COUNT(*) FROM users WHERE username = ? AND password = ?";
             try {
                 PreparedStatement ps = co.prepareStatement(query);
                 ps.setString(1, username);
                 ps.setString(2, password);
                 ResultSet rs = ps.executeQuery();
-                if(rs.next()) {
+                if (rs.next()) {
                     count = rs.getInt(1);
                 }
-            } catch(SQLException e) {
+            } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
         }
         return count;
     }
-    public void doPost(HttpServletRequest request, HttpServletResponse response ) throws IOException, ServletException {
+
+    public String getStatus(String username) {
+        String status = "";
+        if (!username.isEmpty()) {
+            Connection co = DatabaseConnection.myConnection();
+            String query = "SELECT user_status FROM users WHERE username = ?";
+            try {
+                PreparedStatement ps = co.prepareStatement(query);
+                ps.setString(1, username);
+                ResultSet rs = ps.executeQuery();
+                if (rs.next()) {
+                    status = rs.getString("user_status");
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return status;
+    }
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         int resultCount = getCount(username, password);
-        // Pour envoyer resultcount vers la page index.jsp :
-        /*
-        request.setAttribute("resultCount", resultCount);
-        request.getRequestDispatcher("index.jsp").forward(request, response);
-        */
-        if(resultCount == 1) {
+        String status = getStatus(username);
+
+        if (resultCount == 1) {
             // On créer la session et on enregistre l'utilisateur
             HttpSession session = request.getSession();
             session.setAttribute("username", username);
+            // session.setAttribute("status", status);
 
             // On créer le token et on le met dans la session
             String token = JWTManager.generateToken(username, "admin", 300000);
@@ -60,7 +80,7 @@ public class ConnectionServlet extends HttpServlet {
             session.setAttribute("valid", isTokenValid);
 
             // On redirige vers la bonne page
-            response.sendRedirect("logged.jsp");
+            response.sendRedirect("logged-"+status+".jsp");
         } else {
             request.setAttribute("login-error", "");
             request.getRequestDispatcher("index.jsp").forward(request, response);
