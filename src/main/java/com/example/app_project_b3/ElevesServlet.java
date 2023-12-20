@@ -25,16 +25,16 @@ public class ElevesServlet extends HttpServlet {
         Object isTokenValid = session.getAttribute("valid");
         if (isTokenValid != null) {
             Connection co = DatabaseConnection.myConnection();
-            String query = "SELECT * from eleves ORDER BY eleve_last_name";
+            String query = "SELECT user_id, user_last_name, user_first_name from users WHERE user_status = 'eleve' ORDER BY user_last_name";
             try {
                 PreparedStatement ps = co.prepareStatement(query);
                 ResultSet rs = ps.executeQuery();
                 List<Eleve> eleves = new ArrayList<>();
                 while (rs.next()) {
-                    int id = rs.getInt("eleve_id");
-                    String firstName = rs.getString("eleve_first_name");
-                    String lastName = rs.getString("eleve_last_name").toUpperCase();
-                    Eleve eleve = new Eleve(id, firstName, lastName);
+                    int id = rs.getInt("user_id");
+                    String firstName = rs.getString("user_first_name");
+                    String lastName = rs.getString("user_last_name").toUpperCase();
+                    Eleve eleve = new Eleve(id, firstName.substring(0,1).toUpperCase()+ firstName.substring(1), lastName);
                     eleves.add(eleve);
                 }
                 request.setAttribute("eleves", eleves);

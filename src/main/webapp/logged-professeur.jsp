@@ -23,10 +23,10 @@
     </h1>
     <ul>
         <li>
-            <a href="profs-servlet">Liste des professeurs</a>
+            <a href="users-servlet?category=professeur">Liste des professeurs</a>
         </li>
         <li>
-            <a href="eleves-servlet">Liste des élèves</a>
+            <a href="users-servlet?category=eleve">Liste des élèves</a>
         </li>
         <li>
             <a href="cours-servlet">Liste des cours</a>
